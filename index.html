@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset='utf-8'>
+    <title>Binance Uyari Araci</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Uyarı Ureticisi</h1>
+        <p>bu binance'te coinler için uyarılar üreten bir aractır, kolaylık saglar</p>
+        <hr>
+        <br>
+        <form>
+            <div class="row">
+                <div class="chosen-select col-sm-2">
+                        <select onchange="varsayilanFiyat()" id="pbirimi" class="chosen-select form-control">
+                        </select>
+                </div>
+                <div class="chosen-select col-sm-2">
+                    <select id="uyaricion" class="chosen-select form-control">
+                        <option value="fiyat">Fiyat</option>
+                    </select>
+                </div>
+                <div class="chosen-select col-sm-2">
+                    <select onchange="girisDD1()" id="pbirimituru" class="chosen-select form-control">
+                        <option value="USDT">USDT</option>
+                        <option value="Yerli">YERLI</option>
+                    </select>
+                </div>
+                <div class="chosen-select col-sm-2">
+                    <select onchange="girisDD2()" id="uyariSec" class="chosen-select form-control">
+                        <option value="dbuyuk">Daha Buyuk</option>
+                        <option value="daz">Daha Kucuk</option>
+                        <option value="ik">İç Kanal</option>
+                        <option value="dk">Dış Kanal</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-sm-2">
+                    <input class="form-control" type="text" id="fiyatusd1" placeholder="Fiyat 1 (USD)">
+                </div>
+                <div class="form-group col-sm-2">
+                    <input class="form-control" type="text" id="fiyatbtc1" placeholder="Fiyat 1 (YERLI)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-2">
+                    <input class="form-control" type="text" id="fiyatusd2" placeholder="Fiyat 2 (USD)">
+                </div>
+                <div class="form-group col-sm-2">
+                    <input class="form-control" type="text" id="fiyatbtc2" placeholder="Fiyat 2 (YERLI)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-2">
+                    <input type="button" class="btn btn-dark add-row form-control" value="Satır Ekle">
+                </div>
+            </div>
+        </form>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <table id="tablogoruntule" class="table">
+            <thead>
+                <tr>
+                    <th>Seç</th>
+                    <th>Sembol</th>
+                    <th>Uyarı Açık</th>
+                    <th>Para Birimi</th>
+                    <th>Şart</th>
+                    <th>Fiyat 1</th>
+                    <th>Fiyat 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="kayit"></td>
+                    <td>BTCUSDT</td>
+                    <td>Fiyat</td>
+                    <td>USDT</td>
+                    <td>Daha Buyuk</td>
+                    <td>7000</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-danger delete-row">Satır Sil</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
