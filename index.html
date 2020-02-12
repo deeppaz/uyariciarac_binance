@@ -11,66 +11,71 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
+    
+    <audio id="myAudio">
+      <source src="/notification.mp3" type="audio/mpeg">
+    </audio>
+    
+        
+    <br>
     <div class="container">
-        <h1>Uyarı Ureticisi</h1>
-        <p>binance'te coinler için uyarılar üreten bir aractır, kolaylık saglar</p>
-        <hr>
+     
+        <h1 style="color: rgb(228, 117, 13);">Binance uyarıcı</h1>
+        <small>binance için uyarı aracı</small>
         <br>
-        <form>
-            <div class="row">
-                <div class="chosen-select col-sm-2">
-                        <select onchange="varsayilanFiyat()" name="currency" id="currency" class="chosen-select form-control">
-                        </select>
-                </div>
-                <div class="chosen-select col-sm-2">
-                    <select id="alerton" class="chosen-select form-control">
-                        <option value="price">Price</option>
-                    </select>
-                </div>
-                <div class="chosen-select col-sm-2">
-                    <select onchange="girisDD1()" id="currencytype" class="chosen-select form-control">
-                        <option value="USDT">USDT</option>
-                        <option value="Native">Native</option>
-                    </select>
-                </div>
-                <div class="chosen-select col-sm-2">
-                    <select onchange="girisDD2()" id="alertoptions" class="chosen-select form-control">
-                        <option value="gte">Greater Than</option>
-                        <option value="lte">Less Than</option>
-                        <option value="isc">inside channel</option>
-                        <option value="osc">outside channel</option>
-                    </select>
-                </div>
-            </div>
+    
             <br>
+            <form>
             <div class="row">
-                <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="priceusd1" placeholder="Price 1 (USD)">
-                </div>
-                <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="pricebtc1" placeholder="Price 1 (Native)">
-                </div>
+            <div class="form-group col-sm-2">
+            <select onchange="defaultPrices()" name= "currency" id="currency" placeholder="Id" class="chosen-select form-control"></select>
+            </div>
+            <div class="chosen-select col-sm-2">
+            <select class="chosen-select form-control" id="alertOn">
+                  <option value="price">Price</option>
+            </select>
+            </div>
+            <div class="chosen-select col-sm-2">
+            <select onchange="disableInputs1()" class="chosen-select form-control" id="currencytype">
+                  <option value="USDT">USDT</option>
+                  <option value="Native">Native</option>
+            </select>
+            </div>
+            <div class="chosen-select col-sm-2">
+            <select onchange="disableInputs2()" class="chosen-select form-control" id="alertoptions">
+                  <option value="gte">Greater Than</option>
+                  <option value="lte">Less Than</option>
+                  <option value="isc">Inside Channel</option>
+                  <option value="osc">Outside Channel</option>
+            </select>
+            </div>
             </div>
             <div class="row">
-                <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="priceusd2" placeholder="Price 2 (USD)">
-                </div>
-                <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="pricebtc2" placeholder="Price 2 (Native)">
-                </div>
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="priceusd1" placeholder="Price 1(USD)">
+            </div>
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="pricebtc1" placeholder="Price 1(Native)">
+            </div>
             </div>
             <div class="row">
-                <div class="form-group col-sm-2">
-                    <input type="button" class="btn btn-dark add-row form-control" value="Add Row">
-                </div>
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="priceusd2" placeholder="Price 2(USD)">
             </div>
-        </form>
-
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="pricebtc2" placeholder="Price 2(Native)">
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-sm-2">
+            <input type="button" class="btn btn-dark add-row form-control" value="Ekle">
+            </div>
+            </div>
+            </form>
+        
         <br>
         <br>
         <br>
-        <br>
-        <small>örnek tablo</small>
         <table id="dptable" class="table">
             <thead>
                 <tr>
@@ -84,19 +89,37 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><input type="checkbox" name="kayit"></td>
-                    <td>BTCUSDT</td>
-                    <td>Price</td>
-                    <td>USDT</td>
-                    <td>Greater Than</td>
-                    <td>10000</td>
-                    <td>0</td>
-                </tr>
+                <!--<tr>
+                    <td><input type="checkbox" name="record"></td>
+                    <td><span class="dpsym">BTCUSDT</span></td>
+                    <td><span class="dpaon">Price</span></td>
+                    <td><span class="dpcurtype">USDT</span></td>
+                    <td><span class="dpcond">Greater Than</span></td>
+                    <td><span class="dpprice1">Price 1</span></td>
+                    <td><span class="dpprice2">Price 2</span></td>
+                </tr>-->
             </tbody>
         </table>
-        <button type="button" class="btn btn-danger delete-row">Delete Row</button>
+        <button type="button" class="btn btn-danger delete-row">Uyarı isteğini Sil</button>
+        <br/>
+        <br/>
+    
+    
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <hr />
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <footer class="container">
+        <h4 style="color: rgb(228, 117, 13);">freedom ve pure tarafından yapıldı</h4>
+        <p>twitter adresinden ulaşabilirsiniz <a href="https://twitter.com/amazing975">freedom</a></p>
+        <p>twitter adresinden ulaşabilirsiniz <a href="https://twitter.com/h0lyskill">pure</a></p>
+    </footer>
 </body>
 <script src="script.js"></script>
 </html>
