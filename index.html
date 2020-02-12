@@ -13,55 +13,55 @@
 <body>
     <div class="container">
         <h1>Uyarı Ureticisi</h1>
-        <p>bu binance'te coinler için uyarılar üreten bir aractır, kolaylık saglar</p>
+        <p>binance'te coinler için uyarılar üreten bir aractır, kolaylık saglar</p>
         <hr>
         <br>
         <form>
             <div class="row">
                 <div class="chosen-select col-sm-2">
-                        <select onchange="varsayilanFiyat()" id="pbirimi" class="chosen-select form-control">
+                        <select onchange="varsayilanFiyat()" name="currency" id="currency" class="chosen-select form-control">
                         </select>
                 </div>
                 <div class="chosen-select col-sm-2">
-                    <select id="uyaricion" class="chosen-select form-control">
-                        <option value="fiyat">Fiyat</option>
+                    <select id="alerton" class="chosen-select form-control">
+                        <option value="price">Price</option>
                     </select>
                 </div>
                 <div class="chosen-select col-sm-2">
-                    <select onchange="girisDD1()" id="pbirimituru" class="chosen-select form-control">
+                    <select onchange="girisDD1()" id="currencytype" class="chosen-select form-control">
                         <option value="USDT">USDT</option>
-                        <option value="Yerli">YERLI</option>
+                        <option value="Native">Native</option>
                     </select>
                 </div>
                 <div class="chosen-select col-sm-2">
-                    <select onchange="girisDD2()" id="uyariSec" class="chosen-select form-control">
-                        <option value="dbuyuk">Daha Buyuk</option>
-                        <option value="daz">Daha Kucuk</option>
-                        <option value="ik">İç Kanal</option>
-                        <option value="dk">Dış Kanal</option>
+                    <select onchange="girisDD2()" id="alertoptions" class="chosen-select form-control">
+                        <option value="gte">Greater Than</option>
+                        <option value="lte">Less Than</option>
+                        <option value="isc">inside channel</option>
+                        <option value="osc">outside channel</option>
                     </select>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="fiyatusd1" placeholder="Fiyat 1 (USD)">
+                    <input class="form-control" type="text" id="priceusd1" placeholder="Price 1 (USD)">
                 </div>
                 <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="fiyatbtc1" placeholder="Fiyat 1 (YERLI)">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="fiyatusd2" placeholder="Fiyat 2 (USD)">
-                </div>
-                <div class="form-group col-sm-2">
-                    <input class="form-control" type="text" id="fiyatbtc2" placeholder="Fiyat 2 (YERLI)">
+                    <input class="form-control" type="text" id="pricebtc1" placeholder="Price 1 (Native)">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-sm-2">
-                    <input type="button" class="btn btn-dark add-row form-control" value="Satır Ekle">
+                    <input class="form-control" type="text" id="priceusd2" placeholder="Price 2 (USD)">
+                </div>
+                <div class="form-group col-sm-2">
+                    <input class="form-control" type="text" id="pricebtc2" placeholder="Price 2 (Native)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-2">
+                    <input type="button" class="btn btn-dark add-row form-control" value="Add Row">
                 </div>
             </div>
         </form>
@@ -70,31 +70,32 @@
         <br>
         <br>
         <br>
-        <table id="tablogoruntule" class="table">
+        <small>örnek tablo</small>
+        <table id="dptable" class="table">
             <thead>
                 <tr>
-                    <th>Seç</th>
-                    <th>Sembol</th>
-                    <th>Uyarı Açık</th>
-                    <th>Para Birimi</th>
-                    <th>Şart</th>
-                    <th>Fiyat 1</th>
-                    <th>Fiyat 2</th>
+                    <th>Select</th>
+                    <th>Symbol</th>
+                    <th>Alert On</th>
+                    <th>Currency</th>
+                    <th>Condition</th>
+                    <th>Price 1</th>
+                    <th>Price 2</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><input type="checkbox" name="kayit"></td>
                     <td>BTCUSDT</td>
-                    <td>Fiyat</td>
+                    <td>Price</td>
                     <td>USDT</td>
-                    <td>Daha Buyuk</td>
-                    <td>7000</td>
+                    <td>Greater Than</td>
+                    <td>10000</td>
                     <td>0</td>
                 </tr>
             </tbody>
         </table>
-        <button type="button" class="btn btn-danger delete-row">Satır Sil</button>
+        <button type="button" class="btn btn-danger delete-row">Delete Row</button>
     </div>
 </body>
 <script src="script.js"></script>
