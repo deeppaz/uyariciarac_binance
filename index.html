@@ -28,7 +28,7 @@
             <form>
             <div class="row">
             <div class="form-group col-sm-2">
-            <select onchange="defaultPrices()" name= "currency" id="currency" placeholder="Id" class="chosen-select form-control"></select>
+            <select onchange="defaultPrices()" name="currency" id="currency" placeholder="Id" class="chosen-select form-control"></select>
             </div>
             <div class="chosen-select col-sm-2">
             <select class="chosen-select form-control" id="alertOn">
@@ -112,6 +112,94 @@
     <hr />
     <br/>
     <br/>
+    <div class="container">
+     
+        <h1 style="color: rgb(228, 117, 13);">bitforex uyarıcı</h1>
+        <small>bitforex için uyarı aracı</small>
+        <br>
+    
+            <br>
+            <form>
+            <div class="row">
+            <div class="form-group col-sm-2">
+            <select onchange="defaultPricesbit()" name="currencybit" id="currencybit" placeholder="Id" class="chosen-select form-control"></select>
+            </div>
+            <div class="chosen-select col-sm-2">
+            <select class="chosen-select form-control" id="alertOn">
+                  <option value="price">Price</option>
+            </select>
+            </div>
+            <div class="chosen-select col-sm-2">
+            <select onchange="disableInputs1()" class="chosen-select form-control" id="currencytype">
+                  <option value="USDT">USDT</option>
+                  <option value="Native">Native</option>
+            </select>
+            </div>
+            <div class="chosen-select col-sm-2">
+            <select onchange="disableInputs2()" class="chosen-select form-control" id="alertoptions">
+                  <option value="gte">Greater Than</option>
+                  <option value="lte">Less Than</option>
+                  <option value="isc">Inside Channel</option>
+                  <option value="osc">Outside Channel</option>
+            </select>
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="priceusd1" placeholder="Price 1(USD)">
+            </div>
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="pricebtc1" placeholder="Price 1(Native)">
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="priceusd2" placeholder="Price 2(USD)">
+            </div>
+            <div class="form-group col-sm-2">
+            <input class="form-control" type="text" id="pricebtc2" placeholder="Price 2(Native)">
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col-sm-2">
+            <input type="button" class="btn btn-dark add-row form-control" value="Ekle">
+            </div>
+            </div>
+            </form>
+        
+        <br>
+        <br>
+        <br>
+        <table id="dptable" class="table">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Symbol</th>
+                    <th>Alert On</th>
+                    <th>Currency</th>
+                    <th>Condition</th>
+                    <th>Price 1</th>
+                    <th>Price 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--<tr>
+                    <td><input type="checkbox" name="record"></td>
+                    <td><span class="dpsym">BTCUSDT</span></td>
+                    <td><span class="dpaon">Price</span></td>
+                    <td><span class="dpcurtype">USDT</span></td>
+                    <td><span class="dpcond">Greater Than</span></td>
+                    <td><span class="dpprice1">Price 1</span></td>
+                    <td><span class="dpprice2">Price 2</span></td>
+                </tr>-->
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-danger delete-row">Uyarı isteğini Sil</button>
+        <br/>
+        <br/>
+    
+    
+    </div>
     <br/>
     <br/>
     <br/>
@@ -122,4 +210,5 @@
     </footer>
 </body>
 <script src="script.js"></script>
+<script src="bitforex.js"></script>
 </html>
